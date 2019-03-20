@@ -1,30 +1,43 @@
 page-lists {
-  ion-list{
+  ion-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 
-    ion-item{
+    ion-item {
       width: calc(50vw - 24px) !important;
       height: calc(50vw - 24px);
       border: none !important;
-      box-shadow: 0 3px 6px rgba(0,0,0, 0.16), 0 3px 6px rgba(0,0,0,0.23) !important;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
       margin-bottom: 16px !important;
 
-      .item-inner{
+      .item-inner {
         border: none !important;
       }
 
-      .input-wrapper{
+      .input-wrapper {
         text-align: center;
+        color: white;
+        text-emphasis-color: lightgray;
       }
 
-      &.selected-list{
+      &.selected-list {
         background-color: #DDD;
-        box-shadow: 0 3px 15px rgba(0,0,0,0.6) !important;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.6) !important;
         transition: background-color 0.3s ease-out;
       }
 
     }
   }
+
+  $background-colors-list: #f29dad #f0c68d #4ff151 #35a5f2 #e8ef89 #FCF3CF #FBFCFC;
+  $colors-list: #111 #222 #111 #444 #555;
+  @for $i from 1 through length($colors-list) {
+    .styleBack-#{$i} {
+      color: nth($colors-list, $i);
+      background-color: nth($background-colors-list, $i);
+      height: 200px;
+    }
+  }
+
 }

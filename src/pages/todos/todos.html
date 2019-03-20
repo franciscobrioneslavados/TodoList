@@ -26,7 +26,7 @@
       </ion-item>
 
       <ion-item-options side="right">
-        <button ion-button color="dark" (click)="showEditTodo(todo)">
+        <button ion-button color="warning" (click)="showEditTodo(todo)">
           <ion-icon name="create"></ion-icon>
           Edit
         </button>
@@ -38,10 +38,10 @@
 
     </ion-item-sliding>
 
-    <ion-item-divider *ngIf="(todoService.todos | doneTodosPipe).length > 0">Done tasks</ion-item-divider>
+    <ion-item-divider *ngIf="(todoService.todos | doneTodosPipe).length > 0" text-md-capitalize>Done tasks</ion-item-divider>
     <ion-item *ngFor="let todo of todoService.todos | doneTodosPipe" [ngStyle]="setTodoStyles(todo)">
-      <ion-label color="light">{{todo.description}}</ion-label>
-      <ion-checkbox color="light" [checked]="todo.isDone" (click)="toogleTodo(todo)"></ion-checkbox>
+      <ion-label color="success">{{todo.description}}</ion-label>
+      <ion-checkbox color="success" [checked]="todo.isDone" (click)="toogleTodo(todo)"></ion-checkbox>
     </ion-item>
   </ion-list>
 </ion-content>
